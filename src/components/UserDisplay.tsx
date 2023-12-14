@@ -8,14 +8,14 @@ type UserDisplayProps = {
 
 export default function UserDisplay({ user }: UserDisplayProps) {
   return !user.isLoggedIn ? (
-    <div className="flex flex-col items-center mx-2 mt-0 mb-2 p-4 rounded-xl shadow border border-gray-200">
+    <div className="flex flex-col items-center mx-2 mt-0 mb-2 p-4 rounded-xl bg-[var(--global-darker)]">
       <Avatar
-        className="w-[7rem] h-[7rem] mx-auto mt-[-75px] shadow border border-gray-200 bg-white"
+        className="w-[7rem] h-[7rem] mx-auto mt-[-75px] border-4 border-[var(--global-darker)] bg-[var(--global-lighter)]"
         fallback={
-          <i className="fa-fw fa-duotone fa-user text-zinc-500 text-[3rem]" />
+          <i className="fa-fw fa-duotone fa-user text-[var(--global-darker)] text-[3rem]" />
         }
       />
-      <ul className="flex w-full justify-around">
+      <ul className="flex w-full justify-around text-[var(--global-lighter)]">
         <li className="flex items-center font-header text-xl">
           <Link href="/login">login</Link>
         </li>

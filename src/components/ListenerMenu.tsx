@@ -20,7 +20,7 @@ export default function ListenerMenu() {
     <div>
       <ul>
         {listenerMenuItems.map((item, i) => (
-          <li key={i} className="py-4 border-b border-solid border-black">
+          <li key={i} className="py-4 border-b border-[var(--global-darker)]">
             {item.name}
           </li>
         ))}
