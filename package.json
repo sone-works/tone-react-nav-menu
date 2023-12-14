@@ -16,6 +16,7 @@
     "dist"
   ],
   "dependencies": {
+    "@sone-dao/tone-react-core-ui": "2.7.0",
     "@sone-dao/sone-react-utils": "^1.0.1",
     "@sone-dao/tone-react-user-store": "^0.1.0",
     "cookies-next": "^4.1.0",
@@ -28,7 +29,6 @@
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-terser": "^0.4.0",
     "@rollup/plugin-typescript": "^11.0.0",
-    "@sone-dao/tone-react-core-ui": "^2.6.1",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
@@ -39,6 +39,8 @@
     "next": "^14.x",
     "postcss": "^8.4.21",
     "prettier": "^2.8.3",
+    "react": "18.x",
+    "react-dom": "18.x",
     "rollup": "^3.12.1",
     "rollup-plugin-analyze": "^0.3.0",
     "rollup-plugin-banner2": "^1.2.2",
@@ -51,7 +53,6 @@
     "typescript": "^4.9.5"
   },
   "peerDependencies": {
-    "@sone-dao/tone-react-core-ui": "^2.x",
-    "next": "^14.x"
+    "next": "14.x"
   }
 }
