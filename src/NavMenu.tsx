@@ -19,8 +19,13 @@ export default function NavMenu({ useUserStore }: NavMenuProps) {
 
   const isHidden = hiddenPaths.includes(pathname)
 
-  return !user.isLoggedIn || !isHidden ? (
-    <div className="w-full bg-global text-global flex items-center justify-between p-2 sticky top-0 border-b-2 border-global">
+  return (
+    <div
+      className={
+        'w-full bg-global text-global flex items-center justify-between p-2 sticky top-0 border-b-2 border-global' +
+          isHidden && ' hidden'
+      }
+    >
       <span className="text-4xl font-release font-bold">tone</span>
       <DarkModeSwitch />
       {/* div for CSS (or JS) to control hamburger visibility */}
@@ -29,7 +34,5 @@ export default function NavMenu({ useUserStore }: NavMenuProps) {
       </div>
       <MegaMenu isOpen={isMegaOpen} setOpen={setMegaOpen} user={user} />
     </div>
-  ) : (
-    <></>
   )
 }
