@@ -2098,7 +2098,7 @@
   resolved "https://registry.yarnpkg.com/@sone-dao/sone-react-utils/-/sone-react-utils-1.0.1.tgz#81da4c7e8c83115b66e4b4b875f6e77554770328"
   integrity sha512-48hho0n41lqMY5NByAqnMPy11vVN5xXOYwTapdOvgRHVtVZVboA5U/zRJcLEzbvTN/P8w6gzCuqXfgh/xyTHiA==
 
-"@sone-dao/tone-react-core-ui@^2.7.0":
+"@sone-dao/tone-react-core-ui@2.7.0":
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-core-ui/-/tone-react-core-ui-2.7.0.tgz#ed2b7164928b6a4f54114e13626b19dd3645a42b"
   integrity sha512-Hd8hcV1TmgNnxq2ksgk0XKVlrnUJP4ktsOfHXY6al7x1uGG9Rg25T5tAJPwwUckd7KsZRPEke1ir6kDFu5qkOw==
@@ -2108,10 +2108,10 @@
     framer-motion "^10.16.5"
     react-slider "^2.0.6"
 
-"@sone-dao/tone-react-user-store@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-user-store/-/tone-react-user-store-0.1.0.tgz#2aff06586cadca6db6619a7ded5c52a22c94ab13"
-  integrity sha512-qXbChaXgtluKZzDiIvZNKCZW/j2KlQofsfS39+VIMxKN0VSTnLBXk9EkFjp0+7jLDx6+WqwLGJwH8YT/vINx8Q==
+"@sone-dao/tone-react-user-store@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@sone-dao/tone-react-user-store/-/tone-react-user-store-0.2.0.tgz#c5b28905733e0a993cb30e0fbac1aaeafe53d93d"
+  integrity sha512-3cLDl6Uuh1teteMyE/PDNgSvioLwRHyoA/3A1i8H64IZGdKrovHe/TH3wR/akUiG5IF1WkzxZghUQqXTA/PIwA==
   dependencies:
     localforage "^1.10.0"
     zustand "^4.4.7"

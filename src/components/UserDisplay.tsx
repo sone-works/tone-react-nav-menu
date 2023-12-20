@@ -7,27 +7,41 @@ type UserDisplayProps = {
 }
 
 export default function UserDisplay({ user }: UserDisplayProps) {
-  return !user.isLoggedIn ? (
-    <div className="flex flex-col items-center mx-2 mt-0 mb-2 p-4 rounded-xl bg-global-flipped">
+  return (
+    <div className="flex flex-col items-center mx-2 mt-0 mb-2 p-4 rounded-xl bg-user-flipped">
       <Avatar
-        className="w-[7rem] h-[7rem] mx-auto mt-[-75px] border-4 border-global bg-global"
+        className="w-[7rem] h-[7rem] mx-auto mt-[-75px] border-4 border-user bg-user"
         fallback={
-          <i className="fa-fw fa-duotone fa-user text-global text-[3rem]" />
+          <i className="fa-fw fa-duotone fa-user text-user text-[3rem]" />
         }
+        src={user.avatar.dataURL}
       />
-      <ul className="flex w-full justify-around text-global-flipped">
-        <li className="flex items-center font-header text-2xl">
-          <Link href="/login">Login</Link>
-        </li>
-        <li className="flex items-center font-header text-2xl">
-          <Link href="/signup">Signup</Link>
-        </li>
-      </ul>
+      {user.isLoggedIn ? (
+        <div className="flex flex-col w-full">
+          <h3 className="font-release text-user-flipped text-2xl text-center">
+            {user.display}
+          </h3>
+          <ul className="flex items-center justify-center font-content text-user-flipped py-1">
+            <li className="px-2 cursor-pointer">
+              <i className="fa-fw fa-duotone fa-gear mr-2" />
+              Settings
+            </li>
+            <li className="px-2 cursor-pointer">
+              <i className="fa-fw fa-duotone fa-right-from-bracket mr-2" />
+              Signout
+            </li>
+          </ul>
+        </div>
+      ) : (
+        <ul className="flex w-full justify-around text-user-flipped">
+          <li className="flex items-center font-header text-2xl">
+            <Link href="/login">Login</Link>
+          </li>
+          <li className="flex items-center font-header text-2xl">
+            <Link href="/signup">Signup</Link>
+          </li>
+        </ul>
+      )}
     </div>
-  ) : (
-    <img
-      src="https://placehold.co/800x350?text=Component:+User+Display"
-      style={{ maxWidth: '100%', height: 'auto' }}
-    />
   )
 }
