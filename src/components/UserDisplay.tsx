@@ -18,17 +18,31 @@ export default function UserDisplay({ user }: UserDisplayProps) {
       />
       {user.isLoggedIn ? (
         <div className="flex flex-col w-full">
-          <h3 className="font-release text-user-flipped text-2xl text-center">
+          <h3 className="flex items-center justify-center font-release text-user-flipped text-2xl p-1">
             {user.display}
+            <span className="font-header mx-4 text-lg">
+              ($0.00)
+              <i className="fa-fw fa-duotone fa-wallet ml-2" />
+            </span>
           </h3>
-          <ul className="flex items-center justify-center font-content text-user-flipped py-1">
-            <li className="px-2 cursor-pointer">
-              <i className="fa-fw fa-duotone fa-gear mr-2" />
-              Settings
+          <ul className="flex items-center justify-center font-content text-user-flipped py-1 border-user-flipped border-t">
+            <li className="px-2 pt-1">
+              <Link href="/dashboard">
+                <i className="fa-fw fa-solid fa-grid-horizontal mr-2" />
+                Dashboard
+              </Link>
             </li>
-            <li className="px-2 cursor-pointer">
-              <i className="fa-fw fa-duotone fa-right-from-bracket mr-2" />
-              Signout
+            <li className="px-2 pt-1">
+              <Link href="/settings">
+                <i className="fa-fw fa-duotone fa-gear mr-2" />
+                Settings
+              </Link>
+            </li>
+            <li className="px-2 pt-1">
+              <Link href="/signout">
+                <i className="fa-fw fa-duotone fa-right-from-bracket mr-2" />
+                Signout
+              </Link>
             </li>
           </ul>
         </div>

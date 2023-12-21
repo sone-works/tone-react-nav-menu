@@ -3,7 +3,7 @@ export default function HamburgerButton({
 }: HamburgerButtonProps) {
   return (
     <div onClick={(e) => onClick(e)}>
-      <div className="p-2 text-3xl">
+      <div className="p-2 text-3xl cursor-pointer">
         <i className="fa-fw fa-sharp fa-thin fa-bars" />
       </div>
     </div>

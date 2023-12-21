@@ -44,7 +44,7 @@ export default function MegaMenu({ isOpen, setOpen, user }: MegaMenuProps) {
             {item.name}
           </li>
         ))}
-        {user.isLoggedIn && <ListenerMenu />}
+        <ListenerMenu />
       </ul>
       <MenuFooter />
     </div>
