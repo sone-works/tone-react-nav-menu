@@ -23,7 +23,7 @@ export default function NavMenu({ user }: NavMenuProps) {
     setLoaded(true)
   }, [])
 
-  return !isHidden ? (
+  return user.isLoggedIn && !isHidden ? (
     <div
       className="
         w-full bg-global text-global flex items-center justify-between p-2 sticky top-0 border-b-2 border-global"
