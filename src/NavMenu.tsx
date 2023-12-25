@@ -1,19 +1,18 @@
-import { ToneUser } from '@sone-dao/tone-react-user-store'
+import useUserStore from '@sone-dao/tone-react-user-store'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import DarkModeSwitch from './components/DarkModeSwitch'
 import HamburgerButton from './components/HamburgerButton'
 import MegaMenu from './components/MegaMenu'
 
-type NavMenuProps = {
-  user: ToneUser
-}
+type NavMenuProps = {}
 
-export default function NavMenu({ user }: NavMenuProps) {
+export default function NavMenu({}: NavMenuProps) {
   const [isLoaded, setLoaded] = useState<boolean>(false)
   const [isMegaOpen, setMegaOpen] = useState<boolean>(false)
 
   const pathname = usePathname()
+  const user = useUserStore()
 
   const hiddenPaths = ['/signup', '/login']
 
@@ -30,15 +29,16 @@ export default function NavMenu({ user }: NavMenuProps) {
     >
       <span className="text-4xl font-release font-bold">tone</span>
       <DarkModeSwitch />
-      {/* div for CSS (or JS) to control hamburger visibility */}
-      <div>
-        <HamburgerButton onClick={() => setMegaOpen(!isMegaOpen)} />
-      </div>
+      <HamburgerButton onClick={() => setMegaOpen(!isMegaOpen)} />
       {isLoaded && (
-        <MegaMenu isOpen={isMegaOpen} setOpen={setMegaOpen} user={user} />
+        <MegaMenu
+          isMegaOpen={isMegaOpen}
+          setMegaOpen={setMegaOpen}
+          user={user}
+        />
       )}
     </div>
   ) : (
-    <></>
+    <div className="hidden" />
   )
 }

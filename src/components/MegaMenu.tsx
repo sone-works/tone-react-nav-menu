@@ -7,8 +7,8 @@ import MiniPlayer from './MiniPlayer'
 import UserDisplay from './UserDisplay'
 
 type MegaMenuProps = {
-  isOpen: boolean
-  setOpen: Function
+  isMegaOpen: boolean
+  setMegaOpen: Function
   user: ToneUser
 }
 
@@ -25,18 +25,22 @@ const globalMenuItems: MenuItem[] = [
   },
 ]
 
-export default function MegaMenu({ isOpen, setOpen, user }: MegaMenuProps) {
+export default function MegaMenu({
+  isMegaOpen,
+  setMegaOpen,
+  user,
+}: MegaMenuProps) {
   return (
     <div
       className="bg-global text-global flex flex-col w-full h-screen absolute top-0 left-0 transition-all ease-in-out"
       style={{
-        marginLeft: isOpen ? 0 : '-100%',
+        marginLeft: isMegaOpen ? 0 : '-100%',
       }}
     >
       <div className="flex justify-end items-center p-2">
-        <CloseButton onClick={() => setOpen(false)} />
+        <CloseButton onClick={() => setMegaOpen(false)} />
       </div>
-      <UserDisplay user={user} />
+      <UserDisplay user={user} setMegaOpen={setMegaOpen} />
       <MiniPlayer />
       <ul className="text-2xl">
         {globalMenuItems.map((item, i) => (

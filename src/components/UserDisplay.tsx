@@ -4,9 +4,10 @@ import Link from 'next/link'
 
 type UserDisplayProps = {
   user: ToneUser
+  setMegaOpen: Function
 }
 
-export default function UserDisplay({ user }: UserDisplayProps) {
+export default function UserDisplay({ user, setMegaOpen }: UserDisplayProps) {
   return (
     <div className="flex flex-col items-center mx-2 mt-0 mb-2 p-4 rounded-xl bg-user-flipped">
       <Avatar
@@ -27,19 +28,19 @@ export default function UserDisplay({ user }: UserDisplayProps) {
           </h3>
           <ul className="flex items-center justify-center font-content text-user-flipped py-1 border-user-flipped border-t">
             <li className="px-2 pt-1">
-              <Link href="/dashboard">
+              <Link href="/dashboard" onClick={() => setMegaOpen(false)}>
                 <i className="fa-fw fa-solid fa-grid-horizontal mr-2" />
                 Dashboard
               </Link>
             </li>
             <li className="px-2 pt-1">
-              <Link href="/settings">
+              <Link href="/settings" onClick={() => setMegaOpen(false)}>
                 <i className="fa-fw fa-duotone fa-gear mr-2" />
                 Settings
               </Link>
             </li>
             <li className="px-2 pt-1">
-              <Link href="/signout">
+              <Link href="/signout" onClick={() => setMegaOpen(false)}>
                 <i className="fa-fw fa-duotone fa-right-from-bracket mr-2" />
                 Signout
               </Link>
