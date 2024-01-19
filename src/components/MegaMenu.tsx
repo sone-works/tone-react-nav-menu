@@ -35,6 +35,7 @@ export default function MegaMenu({
       className="bg-global text-global flex flex-col w-full h-screen absolute top-0 left-0 transition-all ease-in-out"
       style={{
         marginLeft: isMegaOpen ? 0 : '-100%',
+        zIndex: 9999,
       }}
     >
       <div className="flex justify-end items-center p-2">

@@ -9,19 +9,6 @@ type NavMenuProps = {
   user: ToneUser
 }
 
-const toneUserDefaults = {
-  isLoggedIn: false,
-  userId: '',
-  display: '',
-  description: '',
-  colors: ['', ''],
-  socials: {},
-  location: '',
-  avatar: {
-    dataURL: '',
-  },
-}
-
 export default function NavMenu({ user }: NavMenuProps) {
   const [isMegaOpen, setMegaOpen] = useState<boolean>(false)
 
@@ -31,13 +18,13 @@ export default function NavMenu({ user }: NavMenuProps) {
 
   const isHidden = hiddenPaths.includes(pathname)
 
-  if (!user) user = toneUserDefaults
-
   return user.isLoggedIn && !isHidden ? (
     <div className="w-full bg-global text-global flex items-center justify-between p-2 sticky top-0 border-b-2 border-global">
       <span className="text-4xl font-release font-bold">tone</span>
-      <DarkModeSwitch />
-      <HamburgerButton onClick={() => setMegaOpen(!isMegaOpen)} />
+      <div className="flex items-center">
+        <DarkModeSwitch />
+        <HamburgerButton onClick={() => setMegaOpen(!isMegaOpen)} />
+      </div>
       <MegaMenu isMegaOpen={isMegaOpen} setMegaOpen={setMegaOpen} user={user} />
     </div>
   ) : (
