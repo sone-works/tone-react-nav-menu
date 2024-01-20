@@ -19,7 +19,10 @@ export default function NavMenu({ user }: NavMenuProps) {
   const isHidden = hiddenPaths.includes(pathname)
 
   return user.isLoggedIn && !isHidden ? (
-    <div className="w-full bg-global text-global flex items-center justify-between p-2 sticky top-0 border-b-2 border-global">
+    <div
+      className="w-full bg-global text-global flex items-center justify-between p-2 sticky top-0 border-b-2 border-global"
+      style={{ zIndex: 999 }}
+    >
       <span className="text-4xl font-release font-bold">tone</span>
       <div className="flex items-center">
         <DarkModeSwitch />
